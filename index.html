@@ -1,17 +1,57 @@
-<!-- Password Page -->
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Password Page</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <!-- Replace 'app.js' with the path to your JavaScript file -->
-    <script src="app.js"></script>
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="stylez.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <h1>Welcome to the Mission Work Activity Log</h1>
-    <p>Please enter your password:</p>
-    <input type="password" id="password">
-    <button onclick="verifyPassword()">Enter</button>
-    <button onclick="goToAboutPage()">About</button>
+
+<img id="logo" src="logo.png" alt="Logo" style="width:50px;height:50px;">
+
+<div class="login-container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" id="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" id="psw" required>
+
+    <button type="submit" id="login">Login</button>
+</div>
+
+<div id="footer">
+    <p>Welcome to the Mission Work Activity Log</p>
+    <h1>Welcome!</h1>
+</div>
+
+<script>
+$(document).ready(function(){
+  $("#login").click(function(){
+    var username = $("#uname").val();
+    var password = $("#psw").val();
+
+    // Define your logins here.
+    var logins = {
+      "Admin": "Password",
+      "User1": "Password1",
+      "User2": "Password2",
+      "Seth": "Password!"
+      // Add more logins as needed.
+    };
+
+    // Check if the entered username and password exist in the logins object.
+    if(logins[username] === password) {
+        window.location.href = "dir.html";
+    } else {
+        alert("Invalid username or password");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
+
+
 </body>
 </html>
